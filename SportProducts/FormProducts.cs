@@ -113,14 +113,15 @@ namespace SportProducts
 
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show("Ошибка: " + ex.Message,
                     "Ошибка",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
             }
-            
+
         }
 
         private object LoadInfo(Product product)
@@ -129,8 +130,9 @@ namespace SportProducts
 
             if (product.Discount > 0)
             {
-                priceText = "Цена: " + product.Price + " -> " + product.Price * (100  - product.Discount) / 100;
-            } else
+                priceText = "Цена: " + product.Price + " -> " + product.Price * (100 - product.Discount) / 100;
+            }
+            else
             {
                 priceText = "Цена: " + product.Price;
             }
@@ -155,6 +157,37 @@ namespace SportProducts
             };
 
             form.Show();
+        }
+
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+            FormProductManage form = new FormProductManage();
+
+            DialogResult result = form.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    Product product = new Product 
+                    {
+                        //Article = form.textBox
+                    
+                    };
+
+
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex.Message,
+                        "Ошибка",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+
+
+                MessageBox.Show("Создан");
+            }
         }
     }
 }

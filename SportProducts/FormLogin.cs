@@ -14,6 +14,8 @@ namespace SportProducts
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
+            textBoxLogin.Text = "admin@sport.ru";
+            textBoxPassword.Text = "qwerty123";
             if (String.IsNullOrWhiteSpace(textBoxPassword.Text) && String.IsNullOrWhiteSpace(textBoxLogin.Text))
             {
                 MessageBox.Show("¬ведите логин и пароль", "ќшибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -22,6 +24,7 @@ namespace SportProducts
 
             using (var db = new SportProductsContext())
             {
+
 
                 User user = db.Users.Where(w => w.Password == textBoxPassword.Text && w.Login == textBoxLogin.Text).FirstOrDefault();
 
