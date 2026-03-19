@@ -24,6 +24,24 @@ namespace SportProducts
                 labelName.Text = "Гость";
             }
 
+            using (var db = new SportProductsContext())
+            {
+                if (user != null)
+                {
+                    string roleName = db.Roles.Where(w => w.Id == user.IdRole).First().RoleName;
+                    if (roleName != "Администратор")
+                    {
+                        flowLayoutPanelButtons.Visible = false;
+                    }
+                }
+
+                if (isGuest)
+                {
+                    flowLayoutPanelButtons.Visible = false;
+                }
+            }
+
+
             var colPhoto = new DataGridViewImageColumn();
             colPhoto.Name = "colPhoto";
             colPhoto.Width = 200;

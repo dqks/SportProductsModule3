@@ -29,24 +29,86 @@
         private void InitializeComponent()
         {
             panelTop = new Panel();
+            flowLayoutPanelButtons = new FlowLayoutPanel();
+            buttonAdd = new Button();
+            buttonEdit = new Button();
+            buttonDelete = new Button();
             labelName = new Label();
             buttonLogout = new Button();
             dataGridViewProducts = new DataGridView();
             panelTop.SuspendLayout();
+            flowLayoutPanelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
             SuspendLayout();
             // 
             // panelTop
             // 
             panelTop.BackColor = Color.FromArgb(233, 245, 255);
+            panelTop.Controls.Add(flowLayoutPanelButtons);
             panelTop.Controls.Add(labelName);
             panelTop.Controls.Add(buttonLogout);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(10, 10);
             panelTop.Name = "panelTop";
             panelTop.Padding = new Padding(10);
-            panelTop.Size = new Size(964, 78);
+            panelTop.Size = new Size(964, 97);
             panelTop.TabIndex = 0;
+            // 
+            // flowLayoutPanelButtons
+            // 
+            flowLayoutPanelButtons.Controls.Add(buttonAdd);
+            flowLayoutPanelButtons.Controls.Add(buttonEdit);
+            flowLayoutPanelButtons.Controls.Add(buttonDelete);
+            flowLayoutPanelButtons.Dock = DockStyle.Left;
+            flowLayoutPanelButtons.Location = new Point(10, 10);
+            flowLayoutPanelButtons.Name = "flowLayoutPanelButtons";
+            flowLayoutPanelButtons.Size = new Size(581, 77);
+            flowLayoutPanelButtons.TabIndex = 11;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.FromArgb(67, 97, 238);
+            buttonAdd.FlatAppearance.BorderSize = 0;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
+            buttonAdd.ForeColor = Color.White;
+            buttonAdd.Location = new Point(10, 10);
+            buttonAdd.Margin = new Padding(10);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Padding = new Padding(10);
+            buttonAdd.Size = new Size(135, 58);
+            buttonAdd.TabIndex = 8;
+            buttonAdd.Text = "Добавить";
+            buttonAdd.UseVisualStyleBackColor = false;
+            // 
+            // buttonEdit
+            // 
+            buttonEdit.BackColor = Color.FromArgb(67, 97, 238);
+            buttonEdit.FlatAppearance.BorderSize = 0;
+            buttonEdit.FlatStyle = FlatStyle.Flat;
+            buttonEdit.ForeColor = Color.White;
+            buttonEdit.Location = new Point(165, 10);
+            buttonEdit.Margin = new Padding(10);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Padding = new Padding(10);
+            buttonEdit.Size = new Size(162, 58);
+            buttonEdit.TabIndex = 9;
+            buttonEdit.Text = "Редактировать";
+            buttonEdit.UseVisualStyleBackColor = false;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.BackColor = Color.FromArgb(67, 97, 238);
+            buttonDelete.FlatAppearance.BorderSize = 0;
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.ForeColor = Color.White;
+            buttonDelete.Location = new Point(347, 10);
+            buttonDelete.Margin = new Padding(10);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Padding = new Padding(10);
+            buttonDelete.Size = new Size(135, 58);
+            buttonDelete.TabIndex = 10;
+            buttonDelete.Text = "Удалить";
+            buttonDelete.UseVisualStyleBackColor = false;
             // 
             // labelName
             // 
@@ -67,7 +129,7 @@
             buttonLogout.ForeColor = Color.White;
             buttonLogout.Location = new Point(819, 10);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(135, 58);
+            buttonLogout.Size = new Size(135, 77);
             buttonLogout.TabIndex = 6;
             buttonLogout.Text = "Выйти";
             buttonLogout.UseVisualStyleBackColor = false;
@@ -87,13 +149,13 @@
             dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProducts.ColumnHeadersVisible = false;
             dataGridViewProducts.Dock = DockStyle.Fill;
-            dataGridViewProducts.Location = new Point(10, 88);
+            dataGridViewProducts.Location = new Point(10, 107);
             dataGridViewProducts.MultiSelect = false;
             dataGridViewProducts.Name = "dataGridViewProducts";
             dataGridViewProducts.ReadOnly = true;
             dataGridViewProducts.RowHeadersVisible = false;
             dataGridViewProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewProducts.Size = new Size(964, 463);
+            dataGridViewProducts.Size = new Size(964, 444);
             dataGridViewProducts.TabIndex = 1;
             // 
             // FormProducts
@@ -111,6 +173,7 @@
             Text = "Товары";
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
+            flowLayoutPanelButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
             ResumeLayout(false);
         }
@@ -121,5 +184,9 @@
         private Button buttonLogout;
         private Label labelName;
         private DataGridView dataGridViewProducts;
+        private Button buttonDelete;
+        private Button buttonEdit;
+        private Button buttonAdd;
+        private FlowLayoutPanel flowLayoutPanelButtons;
     }
 }
