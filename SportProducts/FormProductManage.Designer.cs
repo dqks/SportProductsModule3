@@ -49,6 +49,8 @@
             comboBoxManufacturer = new ComboBox();
             comboBoxSupplier = new ComboBox();
             comboBoxUnitOfMeasurment = new ComboBox();
+            labelArticle = new Label();
+            textBoxArticle = new TextBox();
             flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,8 +59,8 @@
             flowLayoutPanel1.Controls.Add(buttonSave);
             flowLayoutPanel1.Controls.Add(buttonCancel);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 384);
-            flowLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
+            flowLayoutPanel1.Location = new Point(0, 429);
+            flowLayoutPanel1.Margin = new Padding(4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(484, 77);
             flowLayoutPanel1.TabIndex = 0;
@@ -71,9 +73,9 @@
             buttonSave.FlatStyle = FlatStyle.Flat;
             buttonSave.ForeColor = Color.White;
             buttonSave.Location = new Point(13, 13);
-            buttonSave.Margin = new Padding(13, 13, 13, 13);
+            buttonSave.Margin = new Padding(13);
             buttonSave.Name = "buttonSave";
-            buttonSave.Padding = new Padding(13, 13, 13, 13);
+            buttonSave.Padding = new Padding(13);
             buttonSave.Size = new Size(150, 50);
             buttonSave.TabIndex = 11;
             buttonSave.Text = "Сохранить";
@@ -87,9 +89,9 @@
             buttonCancel.FlatStyle = FlatStyle.Flat;
             buttonCancel.ForeColor = Color.White;
             buttonCancel.Location = new Point(189, 13);
-            buttonCancel.Margin = new Padding(13, 13, 13, 13);
+            buttonCancel.Margin = new Padding(13);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Padding = new Padding(13, 13, 13, 13);
+            buttonCancel.Padding = new Padding(13);
             buttonCancel.Size = new Size(150, 50);
             buttonCancel.TabIndex = 12;
             buttonCancel.Text = "Отменить";
@@ -115,7 +117,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(13, 63);
+            label2.Location = new Point(13, 104);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(79, 19);
@@ -124,7 +126,7 @@
             // 
             // textBoxDescription
             // 
-            textBoxDescription.Location = new Point(189, 101);
+            textBoxDescription.Location = new Point(189, 137);
             textBoxDescription.Name = "textBoxDescription";
             textBoxDescription.Size = new Size(208, 26);
             textBoxDescription.TabIndex = 6;
@@ -132,7 +134,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(13, 103);
+            label3.Location = new Point(13, 144);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(127, 19);
@@ -142,7 +144,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(13, 143);
+            label4.Location = new Point(13, 184);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(113, 19);
@@ -152,7 +154,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(13, 183);
+            label5.Location = new Point(13, 224);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(84, 19);
@@ -161,7 +163,7 @@
             // 
             // textBoxPrice
             // 
-            textBoxPrice.Location = new Point(189, 218);
+            textBoxPrice.Location = new Point(189, 259);
             textBoxPrice.Name = "textBoxPrice";
             textBoxPrice.Size = new Size(208, 26);
             textBoxPrice.TabIndex = 12;
@@ -169,7 +171,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(13, 223);
+            label6.Location = new Point(13, 264);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(43, 19);
@@ -179,7 +181,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(13, 263);
+            label7.Location = new Point(13, 304);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(145, 19);
@@ -188,7 +190,7 @@
             // 
             // textBoxStorageAmount
             // 
-            textBoxStorageAmount.Location = new Point(189, 296);
+            textBoxStorageAmount.Location = new Point(189, 337);
             textBoxStorageAmount.Name = "textBoxStorageAmount";
             textBoxStorageAmount.Size = new Size(208, 26);
             textBoxStorageAmount.TabIndex = 16;
@@ -196,7 +198,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(13, 303);
+            label8.Location = new Point(13, 344);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(157, 19);
@@ -205,7 +207,7 @@
             // 
             // textBoxDiscount
             // 
-            textBoxDiscount.Location = new Point(189, 335);
+            textBoxDiscount.Location = new Point(189, 376);
             textBoxDiscount.Name = "textBoxDiscount";
             textBoxDiscount.Size = new Size(208, 26);
             textBoxDiscount.TabIndex = 18;
@@ -213,7 +215,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(13, 343);
+            label9.Location = new Point(13, 384);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(150, 19);
@@ -223,7 +225,7 @@
             // comboBoxCategory
             // 
             comboBoxCategory.FormattingEnabled = true;
-            comboBoxCategory.Location = new Point(189, 60);
+            comboBoxCategory.Location = new Point(189, 101);
             comboBoxCategory.Name = "comboBoxCategory";
             comboBoxCategory.Size = new Size(121, 27);
             comboBoxCategory.TabIndex = 19;
@@ -231,7 +233,7 @@
             // comboBoxManufacturer
             // 
             comboBoxManufacturer.FormattingEnabled = true;
-            comboBoxManufacturer.Location = new Point(189, 140);
+            comboBoxManufacturer.Location = new Point(189, 181);
             comboBoxManufacturer.Name = "comboBoxManufacturer";
             comboBoxManufacturer.Size = new Size(121, 27);
             comboBoxManufacturer.TabIndex = 20;
@@ -239,7 +241,7 @@
             // comboBoxSupplier
             // 
             comboBoxSupplier.FormattingEnabled = true;
-            comboBoxSupplier.Location = new Point(189, 180);
+            comboBoxSupplier.Location = new Point(189, 221);
             comboBoxSupplier.Name = "comboBoxSupplier";
             comboBoxSupplier.Size = new Size(121, 27);
             comboBoxSupplier.TabIndex = 21;
@@ -247,17 +249,36 @@
             // comboBoxUnitOfMeasurment
             // 
             comboBoxUnitOfMeasurment.FormattingEnabled = true;
-            comboBoxUnitOfMeasurment.Location = new Point(189, 260);
+            comboBoxUnitOfMeasurment.Location = new Point(189, 301);
             comboBoxUnitOfMeasurment.Name = "comboBoxUnitOfMeasurment";
             comboBoxUnitOfMeasurment.Size = new Size(121, 27);
             comboBoxUnitOfMeasurment.TabIndex = 22;
+            // 
+            // labelArticle
+            // 
+            labelArticle.AutoSize = true;
+            labelArticle.Location = new Point(13, 62);
+            labelArticle.Margin = new Padding(4, 0, 4, 0);
+            labelArticle.Name = "labelArticle";
+            labelArticle.Size = new Size(65, 19);
+            labelArticle.TabIndex = 23;
+            labelArticle.Text = "Ариткул";
+            // 
+            // textBoxArticle
+            // 
+            textBoxArticle.Location = new Point(189, 62);
+            textBoxArticle.Name = "textBoxArticle";
+            textBoxArticle.Size = new Size(208, 26);
+            textBoxArticle.TabIndex = 24;
             // 
             // FormProductManage
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(484, 461);
+            ClientSize = new Size(484, 506);
+            Controls.Add(textBoxArticle);
+            Controls.Add(labelArticle);
             Controls.Add(comboBoxUnitOfMeasurment);
             Controls.Add(comboBoxSupplier);
             Controls.Add(comboBoxManufacturer);
@@ -278,7 +299,7 @@
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormProductManage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Добавление продукта";
@@ -311,5 +332,7 @@
         public ComboBox comboBoxManufacturer;
         public ComboBox comboBoxSupplier;
         public ComboBox comboBoxUnitOfMeasurment;
+        public TextBox textBoxArticle;
+        public Label labelArticle;
     }
 }

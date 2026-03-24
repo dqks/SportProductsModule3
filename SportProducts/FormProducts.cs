@@ -169,14 +169,15 @@ namespace SportProducts
             {
                 try
                 {
-                    Product product = new Product 
+                    Product product = new Product
                     {
                         //Article = form.textBox
-                    
+
                     };
 
 
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("Ошибка: " + ex.Message,
                         "Ошибка",
@@ -188,6 +189,11 @@ namespace SportProducts
 
                 MessageBox.Show("Создан");
             }
+        }
+
+        private void ButtonEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

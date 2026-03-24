@@ -95,6 +95,7 @@
             buttonEdit.TabIndex = 9;
             buttonEdit.Text = "Редактировать";
             buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Click += ButtonEdit_Click;
             // 
             // buttonDelete
             // 
