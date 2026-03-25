@@ -8,6 +8,9 @@ namespace SportProducts
     {
         public User CurrentUser { get; private set; }
         public bool IsGuest { get; private set; }
+        protected string TextFilter;
+        protected string AmountFilter;
+        protected int SupplierFilter;
 
         public FormProducts(User user, bool isGuest)
         {
@@ -37,6 +40,29 @@ namespace SportProducts
                     if (roleName == "Авторизованный пользователь")
                     {
                         flowLayoutPanelFilter.Visible = false;
+                    }
+                    else
+                    {
+
+                        Supplier supplier = new Supplier
+                        {
+                            Id = -1,
+                            SupplierName = "Все поставщики"
+                        };
+
+                        List<Supplier> suppliers = new List<Supplier>();
+                        suppliers.Add(supplier);
+
+                        suppliers.AddRange(db.Suppliers.ToList());
+
+                        suppliers.Add(supplier);
+                        comboBoxSupplierFilter.DataSource = suppliers;
+                        comboBoxSupplierFilter.ValueMember = "Id";
+                        comboBoxSupplierFilter.DisplayMember = "SupplierName";
+
+                        comboBoxSupplierFilter.SelectedValue = -1;
+
+                        comboBoxAmountFilter.Items.AddRange(["По возрастанию", "По убыванию"]);
                     }
                 }
 
@@ -368,6 +394,21 @@ namespace SportProducts
                     MessageBoxIcon.Information
                 );
             }
+        }
+
+        private void TextBoxNameFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBoxSupplierFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBoxAmountFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

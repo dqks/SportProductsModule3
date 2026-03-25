@@ -186,6 +186,7 @@
             textBoxNameFilter.PlaceholderText = "Название продукта";
             textBoxNameFilter.Size = new Size(279, 26);
             textBoxNameFilter.TabIndex = 0;
+            textBoxNameFilter.TextChanged += TextBoxNameFilter_TextChanged;
             // 
             // comboBoxSupplierFilter
             // 
@@ -194,6 +195,7 @@
             comboBoxSupplierFilter.Name = "comboBoxSupplierFilter";
             comboBoxSupplierFilter.Size = new Size(279, 27);
             comboBoxSupplierFilter.TabIndex = 1;
+            comboBoxSupplierFilter.SelectedIndexChanged += ComboBoxSupplierFilter_SelectedIndexChanged;
             // 
             // comboBoxAmountFilter
             // 
@@ -202,6 +204,7 @@
             comboBoxAmountFilter.Name = "comboBoxAmountFilter";
             comboBoxAmountFilter.Size = new Size(279, 27);
             comboBoxAmountFilter.TabIndex = 2;
+            comboBoxAmountFilter.SelectedIndexChanged += ComboBoxAmountFilter_SelectedIndexChanged;
             // 
             // FormProducts
             // 
