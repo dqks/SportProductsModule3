@@ -10,7 +10,7 @@ namespace SportProducts
         public bool IsGuest { get; private set; }
         protected string TextFilter;
         protected string AmountFilter;
-        protected int SupplierFilter;
+        protected Supplier SupplierFilter;
 
         public FormProducts(User user, bool isGuest)
         {
@@ -52,10 +52,7 @@ namespace SportProducts
 
                         List<Supplier> suppliers = new List<Supplier>();
                         suppliers.Add(supplier);
-
                         suppliers.AddRange(db.Suppliers.ToList());
-
-                        suppliers.Add(supplier);
                         comboBoxSupplierFilter.DataSource = suppliers;
                         comboBoxSupplierFilter.ValueMember = "Id";
                         comboBoxSupplierFilter.DisplayMember = "SupplierName";
@@ -240,13 +237,26 @@ namespace SportProducts
                             throw new Exception("Продукт с таким артикулем уже есть");
                         }
 
+                        if (Int32.Parse(form.textBoxDiscount.Text) < 0)
+                        {
+                            throw new Exception("Скидка не может быть меньше 0");
+                        }
+                        else if (Decimal.Parse(form.textBoxPrice.Text) < 0)
+                        {
+                            throw new Exception("Цена не может быть меньше 0");
+                        }
+                        else if (Int32.Parse(form.textBoxStorageAmount.Text) < 0)
+                        {
+                            throw new Exception("Количество на складе не может быть меньше 0");
+                        }
+
                         Product product = new Product
                         {
                             Article = form.textBoxArticle.Text,
                             Description = form.richTextBoxDescription.Text,
                             Discount = Int32.Parse(form.textBoxDiscount.Text),
                             Name = form.textBoxName.Text,
-                            Price = Int32.Parse(form.textBoxPrice.Text),
+                            Price = Math.Round(Decimal.Parse(form.textBoxPrice.Text), 2),
                             StorageAmount = Int32.Parse(form.textBoxStorageAmount.Text),
                             IdCategory = (int)form.comboBoxCategory.SelectedValue,
                             IdSupplier = (int)form.comboBoxSupplier.SelectedValue,
@@ -320,6 +330,19 @@ namespace SportProducts
                             throw new Exception("Продукт с таким артикулем уже есть");
                         }
 
+                        if (Int32.Parse(form.textBoxDiscount.Text) < 0 )
+                        {
+                            throw new Exception("Скидка не может быть меньше 0");
+                        }
+                        else if (Decimal.Parse(form.textBoxPrice.Text) < 0)
+                        {
+                            throw new Exception("Цена не может быть меньше 0");
+                        } 
+                        else if (Int32.Parse(form.textBoxStorageAmount.Text) < 0)
+                        {
+                            throw new Exception("Количество на складе не может быть меньше 0");
+                        }
+
                         product.IdManufacturer = (int)form.comboBoxManufacturer.SelectedValue;
                         product.IdSupplier = (int)form.comboBoxSupplier.SelectedValue;
                         product.IdCategory = (int)form.comboBoxCategory.SelectedValue;
@@ -327,9 +350,11 @@ namespace SportProducts
                         product.Article = form.textBoxArticle.Text;
                         product.Discount = Int32.Parse(form.textBoxDiscount.Text);
                         product.Name = form.textBoxName.Text;
-                        product.Price = Decimal.Parse(form.textBoxPrice.Text);
+                        product.Price = Math.Round(Decimal.Parse(form.textBoxPrice.Text), 2);
                         product.StorageAmount = Int32.Parse(form.textBoxStorageAmount.Text);
                         product.Description = form.richTextBoxDescription.Text;
+
+                        
 
                         db.SaveChanges();
                         LoadProducts();
@@ -398,17 +423,21 @@ namespace SportProducts
 
         private void TextBoxNameFilter_TextChanged(object sender, EventArgs e)
         {
+            this.TextFilter = this.textBoxNameFilter.Text;
+            MessageBox.Show(this.TextFilter);
 
         }
 
         private void ComboBoxSupplierFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.SupplierFilter = (Supplier)this.comboBoxSupplierFilter.SelectedItem;
+            //MessageBox.Show(this.SupplierFilter.SupplierName);
         }
 
         private void ComboBoxAmountFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.AmountFilter = (string)this.comboBoxAmountFilter.SelectedItem;
+            //MessageBox.Show(this.AmountFilter);
         }
     }
 }
