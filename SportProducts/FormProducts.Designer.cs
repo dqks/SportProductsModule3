@@ -36,9 +36,14 @@
             labelName = new Label();
             buttonLogout = new Button();
             dataGridViewProducts = new DataGridView();
+            flowLayoutPanelFilter = new FlowLayoutPanel();
+            textBoxNameFilter = new TextBox();
+            comboBoxSupplierFilter = new ComboBox();
+            comboBoxAmountFilter = new ComboBox();
             panelTop.SuspendLayout();
             flowLayoutPanelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).BeginInit();
+            flowLayoutPanelFilter.SuspendLayout();
             SuspendLayout();
             // 
             // panelTop
@@ -111,6 +116,7 @@
             buttonDelete.TabIndex = 10;
             buttonDelete.Text = "Удалить";
             buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += ButtonDelete_Click;
             // 
             // labelName
             // 
@@ -150,15 +156,52 @@
             dataGridViewProducts.BorderStyle = BorderStyle.None;
             dataGridViewProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProducts.ColumnHeadersVisible = false;
-            dataGridViewProducts.Dock = DockStyle.Fill;
-            dataGridViewProducts.Location = new Point(10, 107);
+            dataGridViewProducts.Dock = DockStyle.Right;
+            dataGridViewProducts.Location = new Point(320, 107);
             dataGridViewProducts.MultiSelect = false;
             dataGridViewProducts.Name = "dataGridViewProducts";
             dataGridViewProducts.ReadOnly = true;
             dataGridViewProducts.RowHeadersVisible = false;
             dataGridViewProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewProducts.Size = new Size(964, 444);
+            dataGridViewProducts.Size = new Size(654, 444);
             dataGridViewProducts.TabIndex = 1;
+            // 
+            // flowLayoutPanelFilter
+            // 
+            flowLayoutPanelFilter.Controls.Add(textBoxNameFilter);
+            flowLayoutPanelFilter.Controls.Add(comboBoxSupplierFilter);
+            flowLayoutPanelFilter.Controls.Add(comboBoxAmountFilter);
+            flowLayoutPanelFilter.Dock = DockStyle.Left;
+            flowLayoutPanelFilter.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelFilter.Location = new Point(10, 107);
+            flowLayoutPanelFilter.Name = "flowLayoutPanelFilter";
+            flowLayoutPanelFilter.Padding = new Padding(10);
+            flowLayoutPanelFilter.Size = new Size(304, 444);
+            flowLayoutPanelFilter.TabIndex = 2;
+            // 
+            // textBoxNameFilter
+            // 
+            textBoxNameFilter.Location = new Point(13, 13);
+            textBoxNameFilter.Name = "textBoxNameFilter";
+            textBoxNameFilter.PlaceholderText = "Название продукта";
+            textBoxNameFilter.Size = new Size(279, 26);
+            textBoxNameFilter.TabIndex = 0;
+            // 
+            // comboBoxSupplierFilter
+            // 
+            comboBoxSupplierFilter.FormattingEnabled = true;
+            comboBoxSupplierFilter.Location = new Point(13, 45);
+            comboBoxSupplierFilter.Name = "comboBoxSupplierFilter";
+            comboBoxSupplierFilter.Size = new Size(279, 27);
+            comboBoxSupplierFilter.TabIndex = 1;
+            // 
+            // comboBoxAmountFilter
+            // 
+            comboBoxAmountFilter.FormattingEnabled = true;
+            comboBoxAmountFilter.Location = new Point(13, 78);
+            comboBoxAmountFilter.Name = "comboBoxAmountFilter";
+            comboBoxAmountFilter.Size = new Size(279, 27);
+            comboBoxAmountFilter.TabIndex = 2;
             // 
             // FormProducts
             // 
@@ -166,6 +209,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(984, 561);
+            Controls.Add(flowLayoutPanelFilter);
             Controls.Add(dataGridViewProducts);
             Controls.Add(panelTop);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -177,6 +221,8 @@
             panelTop.PerformLayout();
             flowLayoutPanelButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewProducts).EndInit();
+            flowLayoutPanelFilter.ResumeLayout(false);
+            flowLayoutPanelFilter.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -190,5 +236,9 @@
         private Button buttonEdit;
         private Button buttonAdd;
         private FlowLayoutPanel flowLayoutPanelButtons;
+        private FlowLayoutPanel flowLayoutPanelFilter;
+        private TextBox textBoxNameFilter;
+        private ComboBox comboBoxSupplierFilter;
+        private ComboBox comboBoxAmountFilter;
     }
 }

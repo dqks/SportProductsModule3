@@ -43,8 +43,22 @@ namespace SportProducts
                 comboBoxUnitOfMeasurment.DataSource = unitOfMeasurments;
                 comboBoxUnitOfMeasurment.DisplayMember = "UnitName";
                 comboBoxUnitOfMeasurment.ValueMember = "Id";
-            }
 
+                if (product != null)
+                {
+                    textBoxArticle.Text = product.Article;
+                    richTextBoxDescription.Text = product.Description;
+                    textBoxDiscount.Text = product.Discount.ToString();
+                    textBoxName.Text = product.Name;
+                    textBoxPrice.Text = product.Price.ToString();
+                    textBoxStorageAmount.Text = product.StorageAmount.ToString();
+
+                    comboBoxCategory.SelectedValue = product.IdCategory;
+                    comboBoxManufacturer.SelectedValue = product.IdManufacturer;
+                    comboBoxUnitOfMeasurment.SelectedValue = product.IdUnitOfMeasurment;
+
+                }
+            }
         }
     }
 }
